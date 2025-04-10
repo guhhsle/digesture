@@ -108,6 +108,7 @@ extension Generate on Book {
       showSnack('$e', false);
     }
     fullText = fullText.trim();
+    if (fullText.isEmpty) return;
     await rememberNew();
     open();
     showSnack('All done', true);
