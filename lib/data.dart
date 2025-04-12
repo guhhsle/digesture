@@ -33,9 +33,9 @@ enum Pref<T> {
   debug('Developer', false, Icons.developer_mode_rounded),
   //
   //INTERFACE
-  clearAnimation('Clear animation', 45, Icons.animation_rounded),
+  clearAnimation('Clear animation', 30, Icons.animation_rounded),
   preload('Preload', 2000, Icons.clear_all_rounded),
-  fontSize('Font size', 16, Icons.format_size_rounded, ui: true),
+  fontSize('Font size', 18, Icons.format_size_rounded, ui: true),
   fontBold('Bold', true, Icons.format_bold_rounded, ui: true),
   fontAlign('Text align', 'Center', Icons.format_align_justify,
       ui: true, all: aligns),
@@ -49,9 +49,9 @@ enum Pref<T> {
   normalised('Normalise by length', false, Icons.straighten_rounded),
   //
   //PHRASE
-  phraseMultiplier('Phrase animation', 2, Icons.animation_rounded),
+  phraseMultiplier('Phrase animation', 6, Icons.animation_rounded),
   phraseBreaks('Phrase breaks', initBreakpoints, Icons.crop_16_9_rounded),
-  phraseOpacity('Phrase opacity', 50, Icons.tonality_rounded, ui: true),
+  phraseOpacity('Phrase opacity', 10, Icons.tonality_rounded, ui: true),
   //
   //LIBRARY
   book('Book', '', null),
