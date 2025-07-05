@@ -1,10 +1,10 @@
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/material.dart';
-import 'functions.dart';
-import 'layer.dart';
 import 'dart:math';
+import 'class/layer.dart';
+import 'class/tile.dart';
+import 'functions.dart';
 import 'data.dart';
-import 'tile.dart';
 import '../data.dart';
 
 class ThemeLayer extends Layer {
@@ -134,17 +134,19 @@ class ThemePref extends ChangeNotifier {
       appBarTheme: AppBarTheme(
         backgroundColor:
             {'Black': Colors.black, 'Transparent': b}[Pref.appbar.value] ?? p,
-        foregroundColor: {
+        foregroundColor:
+            {
               'Black': lighterColor(p, b),
-              'Transparent': p
+              'Transparent': p,
             }[Pref.appbar.value] ??
             b,
         shadowColor: Colors.transparent,
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.w600,
-          color: {
+          color:
+              {
                 'Black': lighterColor(p, b),
-                'Transparent': p
+                'Transparent': p,
               }[Pref.appbar.value] ??
               b,
           fontFamily: Pref.font.value,
@@ -152,9 +154,10 @@ class ThemePref extends ChangeNotifier {
         ),
       ),
       textSelectionTheme: TextSelectionThemeData(
-        cursorColor: {
+        cursorColor:
+            {
               'Black': lighterColor(p, b),
-              'Transparent': p
+              'Transparent': p,
             }[Pref.appbar.value] ??
             b,
       ),
@@ -162,6 +165,7 @@ class ThemePref extends ChangeNotifier {
         titleMedium: TextStyle(fontWeight: FontWeight.w600, color: p),
         titleLarge: TextStyle(fontWeight: FontWeight.w600, color: p),
         titleSmall: TextStyle(fontWeight: FontWeight.w600, color: p),
+        bodySmall: TextStyle(fontWeight: FontWeight.w600, color: p),
         bodyMedium: TextStyle(fontWeight: FontWeight.w600, color: p),
         bodyLarge: TextStyle(fontWeight: FontWeight.w600, color: p),
         displayLarge: TextStyle(fontWeight: FontWeight.w600, color: p),
@@ -219,7 +223,7 @@ class ThemePref extends ChangeNotifier {
         style: ListTileStyle.drawer,
       ),
       iconTheme: IconThemeData(color: p),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 6,
         shadowColor: p,
         margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),

@@ -40,7 +40,7 @@ extension Generate on Book {
       } else if (result.name.endsWith('.epub')) {
         try {
           final inputStream = InputFileStream(result.path!);
-          final archive = ZipDecoder().decodeBuffer(inputStream);
+          final archive = ZipDecoder().decodeStream(inputStream);
           List<String> paragraphs = [''], images = [];
 
           final xmls = archive.files.where((file) {
@@ -169,17 +169,17 @@ const blockElements = {
   ...{'p', 'h1', 'h2', 'h3', 'h4', 'h5'},
   ...{'h6', 'div', 'blockquote', 'pre', 'li'},
   ...{'address', 'figcaption', 'section'},
-  ...{'aside', 'footer', 'header', 'article'}
+  ...{'aside', 'footer', 'header', 'article'},
 };
 
 const imageExtensions = {
   ...{'jpg', 'jpeg', 'png', 'gif', 'bmp'},
-  ...{'webp', 'tiff', 'tif', 'heic'}
+  ...{'webp', 'tiff', 'tif', 'heic'},
 };
 
 const textExtensions = {
   'htm', 'ml', //TEXT
   'ncx', //STRUCTURE AND CHAPTERS
   //'opf', //STRUCTURE AND DESCRIPTIONS
-  'plist' //iBooks
+  'plist', //iBooks
 };
