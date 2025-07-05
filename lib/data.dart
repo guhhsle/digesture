@@ -62,9 +62,16 @@ enum Pref<T> {
   final List<T>? all;
   final String? title; //Backend is null
   final IconData? icon;
-  final bool ui;
+  final bool ui, secret;
 
-  const Pref(this.title, this.initial, this.icon, {this.all, this.ui = false});
+  const Pref(
+    this.title,
+    this.initial,
+    this.icon, {
+    this.all,
+    this.ui = false,
+    this.secret = false,
+  });
 
   T get value => Preferences.get(this);
 
@@ -74,10 +81,14 @@ enum Pref<T> {
 
   Future next() => Preferences.next(this);
 
-  void nextByLayer({suffix = ''}) => NextByLayer(this, suffix: suffix).show();
+  void nextByLayer({String suffix = ''}) {
+    NextByLayer(this, suffix: suffix).show();
+  }
+
+  bool get isInitial => value == initial;
 
   @override
-  String toString() => name;
+  toString() => name;
 }
 
 final textKey = GlobalKey();

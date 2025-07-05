@@ -43,7 +43,7 @@ Future<void> singleChildSheet({
                           vertical: 32,
                           horizontal: 8,
                         ),
-                        physics: scrollPhysics,
+                        physics: bouncePhysics,
                         controller: controller,
                         child: Center(
                           child: DefaultTextStyle(
