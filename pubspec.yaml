@@ -26,10 +26,10 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon.png"
   #    flutter pub run flutter_launcher_icons:main
-  adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/ic_launcher_foreground.png"
+  adaptive_icon_background: "#DFD5B4"
+  adaptive_icon_foreground: "assets/gesture.png"
+  image_path: "assets/gesture.png"
   remove_alpha_ios: true
 
 flutter:
